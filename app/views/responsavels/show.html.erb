@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @responsavel %>
+
+<div>
+  <%= link_to "Edit this responsavel", edit_responsavel_path(@responsavel) %> |
+  <%= link_to "Back to responsavels", responsavels_path %>
+
+  <%= button_to "Destroy this responsavel", @responsavel, method: :delete %>
+</div>

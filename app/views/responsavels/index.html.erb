@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Responsavels</h1>
+
+<div id="responsavels">
+  <% @responsavels.each do |responsavel| %>
+    <%= render responsavel %>
+    <p>
+      <%= link_to "Show this responsavel", responsavel %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New responsavel", new_responsavel_path %>

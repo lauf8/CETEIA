@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_emprestimo: 2022-11-11
+  data_devolucao: 2022-11-11
+  status: MyString
+  responsavel: one
+
+two:
+  data_emprestimo: 2022-11-11
+  data_devolucao: 2022-11-11
+  status: MyString
+  responsavel: two
