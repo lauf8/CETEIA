@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :responsavel_id, style: "display: block" %>
-    <%= form.text_field :responsavel_id %>
+    <%= collection_select(:emprestimo, :responsavel_id, Responsavel.all, :id, :nome, prompt: true)%>
   </div>
 
   <div>
