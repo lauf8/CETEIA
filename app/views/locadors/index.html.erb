@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Locadors</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Turma</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @locadors.each do |locador| %>
+    <tr>
+    <td><%= locador.nome %></td>
+    <% cpf = CPF.new(locador.cpf) %>
+    <td><%= cpf.formatted %></td>
+    <td><%= locador.turma %></td>
+    <td><%= locador.email %></td>
+    <td><%= link_to "Detalhar", locador %></td>
+  </tr>
+   
+  <% end %>
+    
+  </tbody>
+</table>
+
+  
+</div>
+
+<%= link_to "New locador", new_locador_path %>

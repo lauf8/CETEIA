@@ -1,0 +1,46 @@
+<div id="<%= dom_id locador %>">
+
+  
+  <p>
+    <strong>Nome:</strong>
+    <%= locador.nome %>
+  </p>
+
+  <p>
+    
+    <strong>Cpf:</strong>
+    <% cpf = CPF.new(locador.cpf) %>
+    <%= cpf.formatted %>
+  </p>
+
+  <p>
+    <strong>Turma:</strong>
+    <%= locador.turma %>
+  </p>
+
+  <p>
+    <strong>Telefone:</strong>
+    <%= locador.telefone %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= locador.email %>
+  </p>
+
+  <p>
+    <strong>Cidade:</strong>
+    <%= locador.cidade %>
+  </p>
+
+  <p>
+    <strong>Logradouro:</strong>
+    <%= locador.logradouro %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= locador.status %>
+  </p>
+
+</div>

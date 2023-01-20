@@ -1,0 +1,55 @@
+<%= form_with(model: locador) do |form| %>
+  <% if locador.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(locador.errors.count, "error") %> prohibited this locador from being saved:</h2>
+
+      <ul>
+        <% locador.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class = "container">
+  <div class="form-group">
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome , class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label  :cpf, style: "display: block" %>
+    <%= form.text_field :cpf, class: "form-control"%>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :turma, style: "display: block" %>
+    <%= form.text_field :turma , class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :telefone, style: "display: block" %>
+    <%= form.text_field :telefone, class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email , class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cidade, style: "display: block" %>
+    <%= form.text_field :cidade , class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :logradouro, style: "display: block" %>
+    <%= form.text_field :logradouro , class: "form-control"%>
+  </div>
+  <br>
+  <div>
+    <%= form.submit :Enviar, class: 'btn btn-success'%>
+  </div>
+  </div>
+<% end %>
