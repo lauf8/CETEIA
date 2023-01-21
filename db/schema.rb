@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_20_201030) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_21_042223) do
   create_table "locadors", force: :cascade do |t|
     t.string "nome"
     t.string "cpf"
@@ -20,6 +20,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_20_201030) do
     t.string "cidade"
     t.string "logradouro"
     t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "objetos", force: :cascade do |t|
+    t.string "codigo"
+    t.string "tipo"
+    t.text "descricacao"
+    t.string "condicao"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
