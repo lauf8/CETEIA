@@ -22,7 +22,7 @@ class LocadorsController < ApplicationController
   # POST /locadors or /locadors.json
   def create
     @locador = Locador.new(locador_params)
-
+    @locador.status = true
     respond_to do |format|
       if @locador.save
         format.html { redirect_to locador_url(@locador), notice: "Locador was successfully created." }

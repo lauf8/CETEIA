@@ -19,12 +19,15 @@ class ObjetosController < ApplicationController
   def edit
   end
 
+
   # POST /objetos or /objetos.json
   def create
     @objeto = Objeto.new(objeto_params)
-
+    @objeto.codigo = "CETEIA" + SecureRandom.alphanumeric(8)
+    @objeto.status = "Disponível"
     respond_to do |format|
       if @objeto.save
+        
         format.html { redirect_to objeto_url(@objeto), notice: "Objeto was successfully created." }
         format.json { render :show, status: :created, location: @objeto }
       else
@@ -32,6 +35,7 @@ class ObjetosController < ApplicationController
         format.json { render json: @objeto.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PATCH/PUT /objetos/1 or /objetos/1.json

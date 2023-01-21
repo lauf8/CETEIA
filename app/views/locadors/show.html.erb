@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<div class = "container">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @locador %>
+  <%= render @locador %>
+  <div class = "d-flex flex-row">
+    <div class = "p-2">
+      <%= link_to "Editar", edit_locador_path(@locador), :class => "btn btn-warning border" %>
+      </div>
+    
+    <div class = "p-2">
+      <%= button_to "Apagar", @locador,:class => "btn btn-danger border", method: :delete%>
+    </div>
 
-<div>
-  <%= link_to "Edit this locador", edit_locador_path(@locador) %> |
-  <%= link_to "Back to locadors", locadors_path %>
+    </div>
+    <div class = "p-2">
+      <%= link_to "Voltar", locadors_path, :class => "btn btn-primary border"%>
+    </div>
 
-  <%= button_to "Destroy this locador", @locador, method: :delete %>
 </div>

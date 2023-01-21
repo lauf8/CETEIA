@@ -2,13 +2,28 @@
 
 <h1>Objetos</h1>
 
-<div id="objetos">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Disponibilidade</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
   <% @objetos.each do |objeto| %>
-    <%= render objeto %>
-    <p>
-      <%= link_to "Show this objeto", objeto %>
-    </p>
+    <td><%= objeto.codigo %></td>
+    <td><%= objeto.tipo %></td>
+    <td><%= objeto.status %></td>
+    <td><%= link_to "Show this objeto", objeto %></td>
+
+</tr>
+      
+    
   <% end %>
+   </tbody>
+</table>
 </div>
 
 <%= link_to "New objeto", new_objeto_path %>

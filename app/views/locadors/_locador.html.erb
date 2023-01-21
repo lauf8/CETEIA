@@ -40,7 +40,13 @@
 
   <p>
     <strong>Status:</strong>
-    <%= locador.status %>
+    <% if locador.status == true 
+      @status = "Elegivel"
+      else
+      @status = "Suspenso"
+    end
+    %>
+    <%= @status %>
   </p>
 
 </div>
