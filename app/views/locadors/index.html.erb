@@ -8,6 +8,8 @@
       <th scope="col">CPF</th>
       <th scope="col">Turma</th>
       <th scope="col">Email</th>
+      <th scope="col">Email</th>
+      <th scope="col">Status</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -19,6 +21,13 @@
     <td><%= cpf.formatted %></td>
     <td><%= locador.turma %></td>
     <td><%= locador.email %></td>
+    <% if locador.status == true 
+      @status = "Elegivel"
+      else
+      @status = "Suspenso"
+    end
+    %>
+    <td><%= @status %></td>
     <td><%= link_to "Detalhar", locador %></td>
   </tr>
    

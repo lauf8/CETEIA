@@ -25,6 +25,8 @@ gem "turbo-rails"
 gem "validators"
 gem "validates_email_format_of"
 gem "root_domain"
+#Paginação
+gem 'kaminari'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"

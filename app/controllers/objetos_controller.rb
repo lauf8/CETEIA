@@ -3,7 +3,7 @@ class ObjetosController < ApplicationController
 
   # GET /objetos or /objetos.json
   def index
-    @objetos = Objeto.all
+      @objetos = Objeto.order(:codigo).page params[:page]
   end
 
   # GET /objetos/1 or /objetos/1.json
