@@ -27,6 +27,8 @@ gem "validates_email_format_of"
 gem "root_domain"
 #Paginação
 gem 'kaminari'
+#gem para select com pesquisa
+gem "ransack"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -36,6 +38,7 @@ gem "cssbundling-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

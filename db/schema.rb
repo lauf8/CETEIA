@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_21_042223) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_23_013136) do
+  create_table "emprestimos", force: :cascade do |t|
+    t.date "data_emprestimo"
+    t.date "data_devolucao"
+    t.boolean "status"
+    t.string "observacacao"
+    t.integer "locador_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locador_id"], name: "index_emprestimos_on_locador_id"
+  end
+
   create_table "locadors", force: :cascade do |t|
     t.string "nome"
     t.string "cpf"
@@ -34,4 +45,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_042223) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "emprestimos", "locadors"
 end

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_emprestimo: 2023-01-22
+  data_devolucao: 2023-01-22
+  status: false
+  observacacao: MyString
+  locador: one
+
+two:
+  data_emprestimo: 2023-01-22
+  data_devolucao: 2023-01-22
+  status: false
+  observacacao: MyString
+  locador: two

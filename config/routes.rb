@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :emprestimos
   resources :objetos do
     get '/page/:page', action: :index, on: :collection
   end
