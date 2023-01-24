@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_23_013136) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_24_142029) do
   create_table "emprestimos", force: :cascade do |t|
     t.date "data_emprestimo"
     t.date "data_devolucao"
@@ -35,6 +35,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_23_013136) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "objeto_emprestimos", force: :cascade do |t|
+    t.integer "objeto_id", null: false
+    t.integer "emprestimo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emprestimo_id"], name: "index_objeto_emprestimos_on_emprestimo_id"
+    t.index ["objeto_id"], name: "index_objeto_emprestimos_on_objeto_id"
+  end
+
   create_table "objetos", force: :cascade do |t|
     t.string "codigo"
     t.string "tipo"
@@ -46,4 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_23_013136) do
   end
 
   add_foreign_key "emprestimos", "locadors"
+  add_foreign_key "objeto_emprestimos", "emprestimos"
+  add_foreign_key "objeto_emprestimos", "objetos"
 end

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Objeto emprestimos</h1>
+
+<div id="objeto_emprestimos">
+  <% @objeto_emprestimos.each do |objeto_emprestimo| %>
+    <%= render objeto_emprestimo %>
+    <p>
+      <%= link_to "Show this objeto emprestimo", objeto_emprestimo %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New objeto emprestimo", new_objeto_emprestimo_path %>

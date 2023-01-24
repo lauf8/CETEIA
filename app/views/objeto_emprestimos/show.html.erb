@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @objeto_emprestimo %>
+
+<div>
+  <%= link_to "Edit this objeto emprestimo", edit_objeto_emprestimo_path(@objeto_emprestimo) %> |
+  <%= link_to "Back to objeto emprestimos", objeto_emprestimos_path %>
+
+  <%= button_to "Destroy this objeto emprestimo", @objeto_emprestimo, method: :delete %>
+</div>

@@ -1,0 +1,27 @@
+<%= form_with(model: objeto_emprestimo) do |form| %>
+  <% if objeto_emprestimo.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(objeto_emprestimo.errors.count, "error") %> prohibited this objeto_emprestimo from being saved:</h2>
+
+      <ul>
+        <% objeto_emprestimo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :objeto_id, style: "display: block" %>
+    <%= form.text_field :objeto_id %>
+  </div>
+
+  <div>
+    <%= form.label :emprestimo_id, style: "display: block" %>
+    <%= form.text_field :emprestimo_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
