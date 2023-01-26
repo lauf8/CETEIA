@@ -21,7 +21,13 @@
 
   <p>
     <strong>Locador:</strong>
-    <%= emprestimo.locador_id %>
+    <%= emprestimo.locador.nome %>
+  </p>
+
+  <p>
+    <strong>Objeto</strong>
+    
+    <%= emprestimo.objeto.codigo + emprestimo.objeto.tipo %>
   </p>
 
 </div>

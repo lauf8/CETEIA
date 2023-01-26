@@ -7,4 +7,6 @@
   <%= link_to "Back to objetos", objetos_path %>
 
   <%= button_to "Destroy this objeto", @objeto, method: :delete %>
+
+  <%= link_to 'Create PDF document', relatorio_path(format: 'pdf') =%>
 </div>

@@ -14,8 +14,7 @@ class EmprestimosController < ApplicationController
   def new
     @emprestimo = Emprestimo.new
     @locador = Locador.all
-    @q = Locador.ransack(params[:q])
-    @people = @q.result(distinct: true)
+    @objeto = Objeto.all
     
   end
 
@@ -69,6 +68,6 @@ class EmprestimosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def emprestimo_params
-      params.require(:emprestimo).permit(:data_emprestimo, :data_devolucao, :status, :observacacao, :locador_id)
+      params.require(:emprestimo).permit(:data_emprestimo, :data_devolucao, :status, :observacacao, :locador_id, :objeto_id)
     end
 end

@@ -6,6 +6,7 @@ class CreateEmprestimos < ActiveRecord::Migration[7.0]
       t.boolean :status
       t.string :observacacao
       t.references :locador, null: false, foreign_key: true
+      t.references :objeto, null: false, foreign_key: true
 
       t.timestamps
     end
