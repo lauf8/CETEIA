@@ -1,11 +1,14 @@
 class ScheduleController < ApplicationController
     def index
     end
-    respond_to do |format|
+    def show
+      respond_to do |format|
         format.html
         format.pdf do
-          render pdf: "file_name", template
+          render pdf: "Relatorio",
+          template:"schedule/relatorio"
         end
       end
     end
+
   end
