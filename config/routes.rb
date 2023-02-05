@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
   resources :locadors
   root "schedule#index"
-  get "relatorio", to: "schedule#show"
+  get '/relatorio/:id', to: 'emprestimos#pdf', as: 'relatorio'
+
+  
   resources :schdele
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

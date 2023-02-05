@@ -4,10 +4,21 @@ class EmprestimosController < ApplicationController
   # GET /emprestimos or /emprestimos.json
   def index
     @emprestimos = Emprestimo.all
+
+  end
+  def show
   end
 
   # GET /emprestimos/1 or /emprestimos/1.json
-  def show
+  def pdf
+    @emprestimo = Emprestimo.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Relatorio#{@emprestimo.id}",
+        template:"schedule/relatorio"
+      end
+    end
   end
 
   # GET /emprestimos/new

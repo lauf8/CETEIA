@@ -2,6 +2,32 @@
 
 <h1>Emprestimos</h1>
 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Turma</th>
+      <th scope="col">Email</th>
+      <th scope="col">Email</th>
+      <th scope="col">Status</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @emprestimos.each do |emprestimo| %>
+    <tr>
+    <td><%= emprestimo.locador.nome %></td>
+    <td><%= link_to "Detalhar", emprestimo %></td>
+
+    <td><%= link_to 'Create PDF document', relatorio_path(emprestimo,format: 'pdf') =%></td>
+  </tr> 
+   
+  <% end %>
+    
+  </tbody>
+</table>
+
 <div id="emprestimos">
   <% @emprestimos.each do |emprestimo| %>
     <%= render emprestimo %>
