@@ -32,9 +32,8 @@
   </div>
 
   <div>
-    <%= form.label :locador_id, style: "display: block" %>
-
-    <%= form.select :locador_id, Locador.all.map { |t| [t.nome, t.id]}, {}, class: "form-control" %>
+    <%= form.label :locador_id%>
+    <%= form.select :locador_id, Locador.pluck(:nome, :id), {}, {data: { controller: 'slim'} }%>
   </div>
 
   <div>

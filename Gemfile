@@ -91,3 +91,5 @@ group :test do
 end
 
 gem "importmap-rails", "~> 1.1"
+
+gem "faker", "~> 3.1"
