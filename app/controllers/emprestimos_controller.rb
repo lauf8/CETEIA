@@ -1,9 +1,18 @@
 class EmprestimosController < ApplicationController
   before_action :set_emprestimo, only: %i[ show edit update destroy ]
 
+
   # GET /emprestimos or /emprestimos.json
   def index
     @emprestimos = Emprestimo.all
+
+  end
+  def abertos
+    @emprestimos = Emprestimo.where(["status = ? ", true])
+
+  end
+  def fechados
+    @emprestimos = Emprestimo.where(["status = ? ", false])
 
   end
   def show
@@ -25,7 +34,7 @@ class EmprestimosController < ApplicationController
   def new
     @emprestimo = Emprestimo.new
     @locador = Locador.all
-    @objeto = Objeto.all
+    @objeto = Objeto.where(["status = ? ", "Disponível"])
     
   end
 
@@ -36,7 +45,8 @@ class EmprestimosController < ApplicationController
   # POST /emprestimos or /emprestimos.json
   def create
     @emprestimo = Emprestimo.new(emprestimo_params)
-
+    @emprestimo.status = true
+    @emprestimo.data_emprestimo = DateTime.current.to_date
     respond_to do |format|
       if @emprestimo.save
         format.html { redirect_to emprestimo_url(@emprestimo), notice: "Emprestimo was successfully created." }
@@ -69,10 +79,15 @@ class EmprestimosController < ApplicationController
       format.html { redirect_to emprestimos_url, notice: "Emprestimo was successfully destroyed." }
       format.json { head :no_content }
     end
+
+  
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    
     def set_emprestimo
       @emprestimo = Emprestimo.find(params[:id])
     end
@@ -81,4 +96,6 @@ class EmprestimosController < ApplicationController
     def emprestimo_params
       params.require(:emprestimo).permit(:data_emprestimo, :data_devolucao, :status, :observacacao, :locador_id, :objeto_id)
     end
+
+    
 end

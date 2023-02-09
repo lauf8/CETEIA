@@ -6,6 +6,15 @@ class ObjetosController < ApplicationController
       @objetos = Objeto.order(:codigo).page params[:page]
   end
 
+  def disponiveis
+    @objetos = Objeto.where(["status = ? ", "Disponível"]).order(:codigo).page params[:page]
+
+  end
+  def emprestados
+    @objetos = Objeto.where(["status = ? ", "Emprestado"])
+
+  end
+
   # GET /objetos/1 or /objetos/1.json
   def show
   end

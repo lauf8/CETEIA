@@ -1,15 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Objetos</h1>
-  <div>
-    <%= link_to "Novo Objeto", new_emprestimo_path, :class => "btn btn-success"  %>
-  </div>
-  <br>
-  <div>
-    <%= link_to "Disponíveis", objeto_disponivel_path ,:class => "btn btn-info" %>
-    <%= link_to "Emprestados", objeto_emprestado_path, :class => "btn btn-info" %>
 
-  </div>
 <table class="table">
   <thead>
     <tr>
@@ -34,8 +26,8 @@
 </table>
 </div>
   
-  <%= paginate @objetos%>
 
 </nav>
 
 
+<%= link_to "New objeto", new_objeto_path %>

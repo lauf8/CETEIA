@@ -1,0 +1,36 @@
+<div class = "container">
+<p style="color: green"><%= notice %></p>
+
+<h1>Emprestimos em Aberto</h1>
+<%= link_to "New emprestimo", new_emprestimo_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Locador</th>
+      <th scope="col">Objeto</th>
+      <th scope="col">Data Emprestimo</th>
+      <th scope="col">Termo de compromisso<th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @emprestimos.each do |emprestimo| %>
+    <tr>
+    <td><%= emprestimo.locador.nome %></td>
+    <td><%= emprestimo.objeto.codigo %></td>
+    <td><%= emprestimo.data_emprestimo %></td>
+
+
+    <td><%= link_to 'Termo de Compromisso', relatorio_path(emprestimo,format: 'pdf') =%></td>
+    <td><%= link_to "Detalhar", emprestimo %></td>
+
+   
+  </tr> 
+   
+  <% end %>
+    
+  </tbody>
+</table>
+
+</div>

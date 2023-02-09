@@ -11,35 +11,23 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :data_emprestimo, style: "display: block" %>
-    <%= form.date_field :data_emprestimo %>
-  </div>
 
   <div>
     <%= form.label :data_devolucao, style: "display: block" %>
     <%= form.date_field :data_devolucao %>
   </div>
 
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.check_box :status %>
-  </div>
-
-  <div>
-    <%= form.label :observacacao, style: "display: block" %>
-    <%= form.text_field :observacacao %>
-  </div>
-
-  <div>
+  <div class = "mb-3">
     <%= form.label :locador_id%>
-    <%= form.select :locador_id, Locador.pluck(:nome, :id), {}, {data: { controller: 'slim'} }%>
+    <%= form.select :locador_id, Locador.pluck(:nome, :id),{data: { controller: 'slim', slim_target: 'field' }}, { class: "form form-group form-control" }%>
+
   </div>
 
   <div>
     <%= form.label :objeto_id, style: "display: block" %>
 
-    <%= form.select :objeto_id, Objeto.all.map { |t| [t.codigo + " " + t.tipo, t.id]}, {}, class: "form-control" %>
+
+    <%= form.select :objeto_id, @objeto.all.map { |t| [t.codigo + " " + t.tipo, t.id]}, {}, class: "form-control" %>
   </div>
 
 

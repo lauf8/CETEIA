@@ -11,9 +11,14 @@
 
   <p>
     <strong>Status:</strong>
-    <%= emprestimo.status %>
+    <% if emprestimo.status == true 
+      @status = "Aberto"
+      else
+      @status = "Fechado"
+    end
+    %>
+    <%= @status %>
   </p>
-
   <p>
     <strong>Observacacao:</strong>
     <%= emprestimo.observacacao %>

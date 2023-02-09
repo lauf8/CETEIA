@@ -61,6 +61,9 @@ gem "cpf_cnpj"
 gem  'wicked_pdf'
 gem  'wkhtmltopdf-binary'
 
+gem 'font-awesome-rails'
+
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

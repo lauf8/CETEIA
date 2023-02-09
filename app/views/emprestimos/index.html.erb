@@ -1,40 +1,54 @@
-<p style="color: green"><%= notice %></p>
+<div class = "container">
+  <p style="color: green"><%= notice %></p>
 
-<h1>Emprestimos</h1>
+  <h1>Emprestimos</h1>
+  <div>
+    <%= link_to "New emprestimo", new_emprestimo_path, :class => "btn btn-success"  %>
+  </div>
+  <br>
+  <div>
+    <%= link_to "Emprestimos Abertos", emprestimos_abertos_path ,:class => "btn btn-info" %>
+    <%= link_to "Emprestimos Fechados", emprestimos_fechados_path, :class => "btn btn-info" %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">CPF</th>
-      <th scope="col">Turma</th>
-      <th scope="col">Email</th>
-      <th scope="col">Email</th>
-      <th scope="col">Status</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @emprestimos.each do |emprestimo| %>
-    <tr>
-    <td><%= emprestimo.locador.nome %></td>
-    <td><%= link_to "Detalhar", emprestimo %></td>
+  </div>
 
-    <td><%= link_to 'Create PDF document', relatorio_path(emprestimo,format: 'pdf') =%></td>
-  </tr> 
-   
-  <% end %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Locador</th>
+        <th scope="col">Objeto</th>
+        <th scope="col">Data Emprestimo</th>
+        <th scope="col">Status</th>
+        <th scope="col">Termo de compromisso<th>
+        
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @emprestimos.each do |emprestimo| %>
+      <tr>
+      <td><%= emprestimo.locador.nome %></td>
+      <td><%= emprestimo.objeto.codigo %></td>
+      <td><%= emprestimo.data_emprestimo %></td>
+      <% if emprestimo.status == true 
+        @status = "Aberto"
+        else
+        @status = "Fechado"
+      end
+      %>
+      
+      <td><%= @status %></td>
+
+
+      <td><%= link_to 'Termo de Compromisso', relatorio_path(emprestimo,format: 'pdf') =%></td>
+      <td><%= link_to "Detalhar", emprestimo %></td>
+
     
-  </tbody>
-</table>
+    </tr> 
+    
+    <% end %>
+      
+    </tbody>
+  </table>
 
-<div id="emprestimos">
-  <% @emprestimos.each do |emprestimo| %>
-    <%= render emprestimo %>
-    <p>
-      <%= link_to "Show this emprestimo", emprestimo %>
-    </p>
-  <% end %>
 </div>
-
-<%= link_to "New emprestimo", new_emprestimo_path %>
